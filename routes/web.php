@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','SiteController@index');
+
 Route::resource('tickets','TicketController');
 
 Auth::routes();

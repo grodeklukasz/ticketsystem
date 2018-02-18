@@ -19,7 +19,9 @@ class Tickets extends Migration
           $table -> string('title');
           $table -> text('description');
           $table -> text('status');
-          $table -> number('user_id');
+          $table -> integer('user_id');
+          $table -> integer('serviceman_id');
+          $table -> integer('device_id');
           $table -> timestamps();
         });
     }
