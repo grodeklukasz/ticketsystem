@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     public function index(){
-      return view('home.index');
+      $data = [];
+      $data['name'] = 'myName';
+      
+      return view('home.index')->withData($data);
     }
 }

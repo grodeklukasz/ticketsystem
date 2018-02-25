@@ -13,7 +13,19 @@
 
 Route::get('/','SiteController@index');
 
-Route::resource('tickets','TicketController');
+Route::group([
+  'middleware' => 'roles',
+  'roles' => 'serviceman'
+], function(){
+  Route::resource('tickets','TicketController');
+}
+);
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
