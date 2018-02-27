@@ -1,0 +1,14 @@
+html, body{
+  font-size: 16px;
+}
+
+#pad a:link{
+  font-size: 20px;
+  padding: 20px;
+
+}
+#pad p{
+  font-size: 20px;
+  padding: 20px;
+
+}

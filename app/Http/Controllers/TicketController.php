@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
+use App\Ticket as Ticket;
 
 class TicketController extends Controller
 {
@@ -13,7 +16,11 @@ class TicketController extends Controller
      */
     public function index()
     {
-        return view('tickets.index');
+        $ticket = new Ticket();
+        //$data = $ticket -> getTickets();
+        $data = $ticket -> getFullInfoAboutTicket();
+
+        return view('tickets.index',['data' => $data]);
     }
 
     /**
@@ -45,7 +52,12 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $ticket = new Ticket();
+        $data = $ticket -> getTicketById($id);
+
+
+
+        return view('tickets.show')->with('data',$data);
     }
 
     /**

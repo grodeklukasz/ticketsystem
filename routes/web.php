@@ -17,7 +17,10 @@ Route::group([
   'middleware' => 'roles',
   'roles' => 'serviceman'
 ], function(){
+
   Route::resource('tickets','TicketController');
+
+  Route::get('ticket/{id}', 'TicketController@show');
 }
 );
 

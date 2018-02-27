@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
